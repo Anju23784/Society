@@ -1,11 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar</title>
+  <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+    body {
+      margin: 0;
+      font-family: "Nunito Sans", serif;
+      background-color: #020558;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+      background-size: 100px 100px; /* Adjust grid size as needed */
+      background-position: top left;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      padding: 10px 20px;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      height: 80px; /* Adjust size as needed */
+    }
+
+    .logo2 {
+      height: 40px; /* Adjust size as needed */
+      margin-left: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-item {
+      color: #020558;
+      cursor: pointer;
+      font-size: 16px; /* Adjust size as needed */
+    }
+  </style>
 </head>
 <body>
-    <h2>hii </h2>
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="./frontend/IGDTUW_logo.png" alt="Logo" class="logo">
+      <img src="logo2.png" alt="Logo2" class="logo2">
+    </div>
+    <div class="nav-links">
+      <div class="nav-item">Events</div>
+      <div class="nav-item">Societies</div>
+      <div class="nav-item">News</div>
+    </div>
+  </nav>
 </body>
 </html>
