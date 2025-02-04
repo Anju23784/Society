@@ -3,20 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navbar</title>
+  <title>College Society Website</title>
   <style>
-
     @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: "Nunito Sans", serif;
       background-color: #020558;
       background-image: 
         linear-gradient(to right, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
-      background-size: 100px 100px; /* Adjust grid size as needed */
+      background-size: 100px 100px;
       background-position: top left;
+      width: 100%;
+      height: 100vh;
+      overflow-x: hidden;
     }
 
     .navbar {
@@ -25,6 +32,12 @@
       align-items: center;
       background-color: white;
       padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      max-width: 100%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .logo-container {
@@ -33,37 +46,190 @@
     }
 
     .logo {
-      height: 80px; /* Adjust size as needed */
+      height: 80px;
     }
 
     .logo2 {
-      height: 40px; /* Adjust size as needed */
+      height: 40px;
       margin-left: 10px;
     }
 
     .nav-links {
       display: flex;
       gap: 20px;
+      align-items: center;
     }
 
     .nav-item {
       color: #020558;
       cursor: pointer;
-      font-size: 16px; /* Adjust size as needed */
+      font-size: 16px;
+      position: relative;
+    }
+
+    /* Hover effect */
+    .nav-item:hover {
+      color: #FF6347;
+      text-decoration: underline;
+    }
+
+    /* Dropdown styling */
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 30px;
+      left: 0;
+      background-color: white;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      width: 150px;
+    }
+
+    .dropdown-item {
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    .dropdown-item:hover {
+      background-color: #f0f0f0;
+    }
+
+    .nav-item:hover .dropdown {
+      display: block;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #020558;
+      padding: 2rem ;
+      gap: 20px;
+      position: relative;
+    }
+
+    /* Filter Section */
+    .filter-section {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 10px 20px;
+      border-radius: 30px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .filter-section i {
+      font-size: 20px;
+      color: #020558;
+    }
+
+    /* Societies List */
+    .society-list {
+      display: flex;
+      gap: 10px;
+    }
+
+    .society {
+      background-color: #fff;
+      color: #020558;
+      border-radius: 8px;
+      width: 200px;
+      text-align: center;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      height: 30px;  /* Height of each society name */
+      line-height: 30px;
+    }
+
+    .society:hover {
+      background-color: #FF6347;
+      color: white;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+      }
+
+      .logo-container {
+        margin-bottom: 15px;
+      }
+
+      .hero {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
 <body>
   <nav class="navbar">
     <div class="logo-container">
-      <img src="./frontend/IGDTUW_logo.png" alt="Logo" class="logo">
+      <a href="/home">
+        <img src="IGDTUW_logo.png" alt="Logo" class="logo">
+      </a>
       <img src="logo2.png" alt="Logo2" class="logo2">
     </div>
     <div class="nav-links">
-      <div class="nav-item">Events</div>
-      <div class="nav-item">Societies</div>
-      <div class="nav-item">News</div>
+      <div class="nav-item">
+        Events
+        <div class="dropdown">
+          <div class="dropdown-item">Upcoming</div>
+          <div class="dropdown-item">Past</div>
+        </div>
+      </div>
+      <div class="nav-item">
+        Societies
+        <div class="dropdown">
+          <div class="dropdown-item">Society 1</div>
+          <div class="dropdown-item">Society 2</div>
+        </div>
+      </div>
+      <div class="nav-item">
+        News
+        <div class="dropdown">
+          <div class="dropdown-item">Updates</div>
+          <div class="dropdown-item">Announcements</div>
+        </div>
+      </div>
     </div>
   </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <!-- Filter Section -->
+    
+
+    <!-- Societies List -->
+    <div class="society-list">
+      
+
+      <div class="society">Society 1</div>
+      <div class="society">Society 2</div>
+      <div class="society">Society 3</div>
+      <div class="society">Society 4</div>
+      <div class="society">Society 5</div>
+      <div class="society">Society 6</div>
+    </div>
+  </div>
+
+  <!-- Include Font Awesome for the filter icon (Three horizontal lines) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
 </html>
