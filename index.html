@@ -4,232 +4,178 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>College Society Website</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: "Nunito Sans", serif;
-      background-color: #020558;
-      background-image: 
-        linear-gradient(to right, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
-      background-size: 100px 100px;
-      background-position: top left;
-      width: 100%;
-      height: 100vh;
-      overflow-x: hidden;
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: white;
-      padding: 10px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      width: 100%;
-      max-width: 100%;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .logo-container {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo {
-      height: 80px;
-    }
-
-    .logo2 {
-      height: 40px;
-      margin-left: 10px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .nav-item {
-      color: #020558;
-      cursor: pointer;
-      font-size: 16px;
-      position: relative;
-    }
-
-    /* Hover effect */
-    .nav-item:hover {
-      color: #FF6347;
-      text-decoration: underline;
-    }
-
-    /* Dropdown styling */
-    .dropdown {
-      display: none;
-      position: absolute;
-      top: 30px;
-      left: 0;
-      background-color: white;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-      padding: 10px;
-      width: 150px;
-    }
-
-    .dropdown-item {
-      padding: 8px 12px;
-      cursor: pointer;
-    }
-
-    .dropdown-item:hover {
-      background-color: #f0f0f0;
-    }
-
-    .nav-item:hover .dropdown {
-      display: block;
-    }
-
-    /* Hero Section */
-    .hero {
-      height: 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: #020558;
-      padding: 2rem ;
-      gap: 20px;
-      position: relative;
-    }
-
-    /* Filter Section */
-    .filter-section {
-      position: absolute;
-      top: 10px;
-      left: 20px;
-      background-color: rgba(255, 255, 255, 0.7);
-      padding: 10px 20px;
-      border-radius: 30px;
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      cursor: pointer;
-    }
-
-    .filter-section i {
-      font-size: 20px;
-      color: #020558;
-    }
-
-    /* Societies List */
-    .society-list {
-      display: flex;
-      gap: 10px;
-    }
-
-    .society {
-      background-color: #fff;
-      color: #020558;
-      border-radius: 8px;
-      width: 200px;
-      text-align: center;
-      font-size: 16px;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      height: 30px;  /* Height of each society name */
-      line-height: 30px;
-    }
-
-    .society:hover {
-      background-color: #FF6347;
-      color: white;
-    }
-
-    /* Mobile responsiveness */
-    @media (max-width: 768px) {
-      .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-      }
-
-      .logo-container {
-        margin-bottom: 15px;
-      }
-
-      .hero {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  </style>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="logo-container">
-      <a href="/home">
-        <img src="/frontend/IGDTUW_logo.png" alt="Logo" class="logo">
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="IGDTUW_logo.png" alt="Logo" class="logo"> College Society
       </a>
-      <img src="logo2.png" alt="Logo2" class="logo2">
-    </div>
-    <div class="nav-links">
-      <div class="nav-item">
-        Events
-        <div class="dropdown">
-          <div class="dropdown-item">Upcoming</div>
-          <div class="dropdown-item">Past</div>
-        </div>
-      </div>
-      <div class="nav-item">
-        Societies
-        <div class="dropdown">
-          <div class="dropdown-item">Society 1</div>
-          <div class="dropdown-item">Society 2</div>
-        </div>
-      </div>
-      <div class="nav-item">
-        News
-        <div class="dropdown">
-          <div class="dropdown-item">Updates</div>
-          <div class="dropdown-item">Announcements</div>
-        </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown" role="button" data-bs-toggle="dropdown">
+              Events
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Upcoming</a></li>
+              <li><a class="dropdown-item" href="#">Past</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="societiesDropdown" role="button" data-bs-toggle="dropdown">
+              Societies
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Society 1</a></li>
+              <li><a class="dropdown-item" href="#">Society 2</a></li>
+              <li><a class="dropdown-item" href="#">Society 3</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="newsDropdown" role="button" data-bs-toggle="dropdown">
+              News
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Updates</a></li>
+              <li><a class="dropdown-item" href="#">Announcements</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <div class="hero">
-    <!-- Filter Section -->
+  <header class="hero">
+    <h1>Welcome to College Societies</h1>
+    <p>Join, Explore, and Grow with Us!</p>
+  </header>
+
+  <!-- Societies List Section -->
+  <!-- Societies Section -->
+<div class="container my-5">
+    <h2 class="text-center mb-4">Our Societies</h2>
     
-
-    <!-- Societies List -->
-    <div class="society-list">
-      
-
-      <div class="society">Society 1</div>
-      <div class="society">Society 2</div>
-      <div class="society">Society 3</div>
-      <div class="society">Society 4</div>
-      <div class="society">Society 5</div>
-      <div class="society">Society 6</div>
+    <div class="row">
+      <!-- Society 1 -->
+      <div class="col-md-4">
+        <div class="society-card">
+          <h4>Society 1</h4>
+          <p>This society focuses on technical innovation and organizes hackathons, coding events, and workshops.</p>
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+  
+      <!-- Society 2 -->
+      <div class="col-md-4">
+        <div class="society-card">
+          <h4>Society 2</h4>
+          <p>A community dedicated to literature and arts, fostering creativity through poetry, storytelling, and debates.</p>
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+  
+      <!-- Society 3 -->
+      <div class="col-md-4">
+        <div class="society-card">
+          <h4>Society 3</h4>
+          <p>Bringing together passionate musicians and artists to create and share their work through events and performances.</p>
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+  
+      <!-- Society 4 -->
+      <div class="col-md-4">
+        <div class="society-card">
+          <h4>Society 4</h4>
+          <p>A dynamic club promoting entrepreneurship and leadership skills through seminars and startup mentorship programs.</p>
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+  
+      <!-- Society 5 -->
+      <div class="col-md-4">
+        <div class="society-card">
+          <h4>Society 5</h4>
+          <p>Dedicated to robotics and automation, where students design and build their own robots for competitions.</p>
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+  
+      <!-- Society 6 -->
+      <div class="col-md-4">
+        <div class="society-card">
+          <h4>Society 6</h4>
+          <p>Focused on social initiatives and community service, encouraging students to engage in impactful projects.</p>
+          <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
     </div>
   </div>
+  
 
-  <!-- Include Font Awesome for the filter icon (Three horizontal lines) -->
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  
+
+  <!-- Event Cards Section -->
+  <section class="container my-4">
+    <h2 class="text-center mb-4">Featured Events</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card text-bg-primary">
+          <div class="card-header">Upcoming</div>
+          <div class="card-body">
+            <h5 class="card-title">Tech Fest</h5>
+            <p class="card-text">Join the biggest tech event of the year!</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-bg-success">
+          <div class="card-header">Workshop</div>
+          <div class="card-body">
+            <h5 class="card-title">AI & ML Bootcamp</h5>
+            <p class="card-text">Learn the latest trends in AI & ML.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card text-bg-danger">
+          <div class="card-header">Cultural</div>
+          <div class="card-body">
+            <h5 class="card-title">Dance Battle</h5>
+            <p class="card-text">Showcase your talent in our annual dance competition.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer text-center py-3">
+    <p>&copy; 2025 College Society. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
